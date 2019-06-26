@@ -79,8 +79,10 @@ defmodule Mongo.EctoOne.NormalizedQuery do
       end)
       |> Kernel.++(pipeline)
 
-    if query != %{} do
+    pipeline = if query != %{} do
       pipeline = [["$match": query] | pipeline]
+    else
+      pipeline
     end
 
     %AggregateQuery{coll: coll, pipeline: pipeline, pk: pk, fields: fields,
