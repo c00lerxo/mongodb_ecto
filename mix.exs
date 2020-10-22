@@ -20,7 +20,7 @@ defmodule Mongo.EctoOne.Mixfile do
 
   defp deps do
     [
-      {:mongodb, "~> 0.1"},
+      {:mongodb_driver, "~> 0.6"},
       {:ecto_one, github: "mkaszubowski/ecto", branch: "ecto_one"},
       {:dialyze, "~> 0.2.0", only: :dev},
       {:excoveralls, "~> 0.3.11", only: :test},
